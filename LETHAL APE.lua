@@ -1,30 +1,30 @@
-当地的玩家=游戏：GetService("玩家")
-当地的coreGui=游戏：GetService("CoreGui")
-当地的virtualInputManager=游戏：GetService("VirtualInputManager")
-当地的replicatedStorage=游戏：GetService("ReplicatedStorage")
-当地的runService=game:GetService("运行服务")
-当地的userInputService=game:GetService("UserInputService")
-当地的照明=游戏：GetService("照明")
-当地的UI=loadstring(游戏：HttpGet("https://raw.githubusercontent.com/Baloksxin/BK-PE-SCRIPT/refs/heads/main/UI.txt"))()
+local players = game:GetService("Players")
+local coreGui = game:GetService("CoreGui")
+local virtualInputManager = game:GetService("VirtualInputManager")
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local runService = game:GetService("RunService")
+local userInputService = game:GetService("UserInputService")
+local lighting = game:GetService("Lighting")
+local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/Baloksxin/BK-PE-SCRIPT/refs/heads/main/UI.txt"))()
 
-当地的功能F1()
-为键、值在……内对(工作区：GetDescendants())在
-    如果值：Isa("型号") 然后
-为key2，value2在...inner pairs(value:GetChildren())在
+local function f1()
+  for key, value in pairs(workspace:GetDescendants()) do
+    if value:IsA("Model") then
+      for key2, value2 in pairs(value:GetChildren()) do
       end
     end
   end
 end
 
-当地的 localPlayer = players.LocalPlayer
-当地的 currentCamera = workspace.CurrentCamera
-当地的 walkSpeed = 16
+local localPlayer = players.LocalPlayer
+local currentCamera = workspace.CurrentCamera
+local walkSpeed = 16
 
-如果 localPlayer.Character and localPlayer.Character:FindFirstChild("Humanoid") 然后
+if localPlayer.Character and localPlayer.Character:FindFirstChild("Humanoid") then
   walkSpeed = localPlayer.Character.Humanoid.WalkSpeed
 end
 
-当地的 v1 = {
+local v1 = {
   Speed = walkSpeed,
   FOV = currentCamera.FieldOfView,
   SpeedEn = false,
